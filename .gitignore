@@ -1,3 +1,6 @@
+# HTML folder (old static HTML files)
+html/
+
 # Logs
 logs
 *.log
