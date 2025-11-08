@@ -1,0 +1,189 @@
+
+.restaurant-card {
+    border-radius: 8px;
+    border: 1px solid var(--tertiary-border);
+    overflow: hidden;
+
+    &:hover {
+        .restaurant-img {
+            overflow: hidden;
+            img {
+                border-top-right-radius: 12px;
+                border-top-left-radius: 12px;
+            }
+        }
+    }
+
+    .restaurant-img {
+        position: relative;
+        overflow: hidden;
+        height: 200px;
+
+        img {
+            @include transition(0.8s);
+            width: 100%;
+            height: 100%;
+            border-top-right-radius: 12px;
+            border-top-left-radius: 12px;
+        }
+
+        @media #{$xs} {
+            height: 260px;
+        }
+    }
+}
+
+.restaurant-content {
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+
+    .area-name {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--primary-title);
+        margin-bottom: 2px;
+
+        &:hover {
+            color: var(--primary-color);
+        }
+
+        @media #{$xs-to-md-max} {
+            font-size: 16px;
+        }
+    }
+
+    .location {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        font-size: 16px;
+        color: var(--primary-color);
+        margin-bottom: 12px;
+
+        @media #{$xs-to-md-max} {
+            font-size: 16px;
+        }
+
+        .name {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--primary-color);
+            line-height: 1.8;
+
+            @media #{$xs-to-md-max} {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .restaurant-person {
+        background-color: var(--tertiary-border);
+        padding: 4px 24px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+
+        .count {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+            font-size: 20px;
+            color: var(--primary-title);
+
+            @media #{$xs-to-md-max} {
+                font-size: 16px;
+            }
+
+            .pera {
+                font-size: 14px;
+                font-weight: 400;
+                color: var(--primary-title);
+            }
+        }
+    }
+
+    .price-review {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+
+        @media #{$vxs} {
+            gap: 0px;
+        }
+
+        .pera {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-title);
+
+            @media #{$xs-to-md-max} {
+                font-size: 14px;
+            }
+        }
+
+        .light-pera {
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--primary-paragraph);
+
+            @media #{$xs-to-md-max} {
+                font-size: 14px;
+            }
+        }
+
+        .rating {
+            color: var(--ratting-color);
+            font-size: 16px;
+            display: flex;
+            gap: 6px;
+            align-items: center;
+
+            @media #{$xs-to-md-max} {
+                font-size: 16px;
+            }
+
+            .pera {
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--primary-title);
+            }
+        }
+    }
+}
+
+.image-badge-restaurant {
+    padding: 1px 9px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #FFF;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 19px;
+    transform: rotate(-45deg);
+    width: 100px;
+    display: block;
+    background: var(--secondary-color);
+    background: linear-gradient(var(--secondary-color) 0%, var(--secondary-color) 100%);
+    box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: 14px;
+    left: -22px;
+
+    .pera {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+
+    &.active {
+        background-color: var(--secondary-color);
+        color: var(--white);
+    }
+}
