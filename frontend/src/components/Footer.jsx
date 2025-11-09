@@ -144,7 +144,12 @@ function Footer() {
                     © <span className="current-year">{currentYear}</span> Sri Lankan Tourism. All rights
                     reserved
                   </p>
-                  <p className="pera">Powered by @Travello</p>
+                  <p className="pera">
+                    Powered by{' '}
+                    <a href="https://bitrate.lk" target="_blank" rel="noopener noreferrer" className="text-decoration-none">
+                      @Bitrate.lk
+                    </a>
+                  </p>
                 </div>
               </div>
             </div>
