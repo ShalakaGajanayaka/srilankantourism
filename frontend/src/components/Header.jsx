@@ -174,25 +174,25 @@ function Header() {
                           </li>
                           <li className="single-list">
                             <a href="javascript:void(0)" className="single">
-                              Tours <i className="ri-arrow-down-s-line"></i>
+                              Tours 
                             </a>
-                            <ul className="submenu">
-                              {/* <li className="single-list">
+                            {/* <ul className="submenu">
+                              <li className="single-list">
                                 <Link to="/tour-list" className="single">Tour Category Page</Link>
-                              </li> */}
+                              </li>
                               <li className="single-list">
                                 <Link to="/top-filter-tour-list" className="single">Tour Top Filter Category</Link>
                               </li>
                               <li className="single-list">
                                 <Link to="/destination" className="single">Tour destination</Link>
                               </li>
-                              {/* <li className="single-list">
+                              <li className="single-list">
                                 <Link to="/details-with-gallery" className="single">Details With Gallery</Link>
-                              </li> */}
+                              </li>
                               <li className="single-list">
                                 <Link to="/details-with-slider" className="single">Details With slider</Link>
                               </li>
-                              {/* <li className="single-list">
+                              <li className="single-list">
                                 <Link to="/tour-cart-page" className="single">Cart Tour Page</Link>
                               </li>
                               <li className="single-list">
@@ -200,14 +200,14 @@ function Header() {
                               </li>
                               <li className="single-list">
                                 <Link to="/tour-booking-complite" className="single">Finish Tour Booking</Link>
-                              </li> */}
-                            </ul>
+                              </li>
+                            </ul> */}
                           </li>
                           <li className="single-list">
                             <a href="javascript:void(0)" className="single">
-                              Hotels <i className="ri-arrow-down-s-line"></i>
+                              Hotels 
                             </a>
-                            <ul className="submenu">
+                            {/* <ul className="submenu">
                               <li className="single-list">
                                 <Link to="/hotel-list" className="single">hotel Category Page</Link>
                               </li>
@@ -229,13 +229,13 @@ function Header() {
                               <li className="single-list">
                                 <Link to="/invoice" className="single">View Invoice</Link>
                               </li>
-                            </ul>
+                            </ul> */}
                           </li>
                           <li className="single-list">
                             <a href="javascript:void(0)" className="single">
-                              Transports <i className="ri-arrow-down-s-line"></i>
+                              Transports 
                             </a>
-                            <ul className="submenu">
+                            {/* <ul className="submenu">
                               <li className="single-list">
                                 <Link to="/transports-list" className="single">transports Category Page</Link>
                               </li>
@@ -257,13 +257,13 @@ function Header() {
                               <li className="single-list">
                                 <Link to="/invoice" className="single">View Invoice</Link>
                               </li>
-                            </ul>
+                            </ul> */}
                           </li>
                           <li className="single-list">
                             <a href="javascript:void(0)" className="single">
-                              Restaurants <i className="ri-arrow-down-s-line"></i>
+                              Restaurants 
                             </a>
-                            <ul className="submenu">
+                            {/* <ul className="submenu">
                               <li className="single-list">
                                 <Link to="/restaurant-list" className="single">restaurant Category Page</Link>
                               </li>
@@ -285,9 +285,9 @@ function Header() {
                               <li className="single-list">
                                 <Link to="/invoice" className="single">View Invoice</Link>
                               </li>
-                            </ul>
+                            </ul> */}
                           </li>
-                          <li className="single-list">
+                          {/* <li className="single-list">
                             <a href="javascript:void(0)" className="single">
                               Pages <i className="ri-arrow-down-s-line"></i>
                             </a>
@@ -399,7 +399,7 @@ function Header() {
                                 </ul>
                               </li>
                             </ul>
-                          </li>
+                          </li> */}
                           <li className="d-block d-lg-none">
                             <div className="header-right-three pl-15 mt-10">
                               <div className="sign-btn">
