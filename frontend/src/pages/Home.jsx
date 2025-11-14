@@ -13,6 +13,7 @@ function Home() {
   const [activeExploreTab, setActiveExploreTab] = useState('explore-one');
   const brandSwiperRef = useRef(null);
   const favSwiperRef = useRef(null);
+  const testimonialSwiperRef = useRef(null);
 
   // Initialize Select2 dropdowns
   useEffect(() => {
@@ -287,6 +288,140 @@ function Home() {
       if (favSwiperRef.current && favSwiperRef.current.destroy) {
         favSwiperRef.current.destroy();
         favSwiperRef.current = null;
+      }
+    };
+  }, []);
+
+  // Initialize Testimonial Swiper
+  useEffect(() => {
+    const initTestimonialSwiper = () => {
+      if (typeof window !== 'undefined' && window.Swiper) {
+        const swiperElement = document.querySelector('.testimonialThree-active');
+        if (swiperElement && !testimonialSwiperRef.current) {
+          testimonialSwiperRef.current = new window.Swiper('.testimonialThree-active', {
+            loop: true,
+            autoplay: {
+              delay: 3000,
+              disableOnInteraction: false,
+            },
+            pagination: {
+              el: '.testimonialThree-active .swiper-pagination',
+              type: 'progressbar',
+            },
+          });
+        }
+      }
+    };
+
+    // Try to initialize immediately
+    initTestimonialSwiper();
+
+    // If Swiper is not available, wait a bit and try again
+    if (typeof window !== 'undefined' && !window.Swiper) {
+      const timer = setTimeout(() => {
+        initTestimonialSwiper();
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+
+    // Cleanup on unmount
+    return () => {
+      if (testimonialSwiperRef.current && testimonialSwiperRef.current.destroy) {
+        testimonialSwiperRef.current.destroy();
+        testimonialSwiperRef.current = null;
+      }
+    };
+  }, []);
+
+  // Initialize Back to Top Button
+  useEffect(() => {
+    let handleScroll;
+    let handleClick;
+    let progressParent;
+
+    const initBackToTop = () => {
+      const progressPath = document.querySelector('.progressParent path');
+      if (!progressPath) return;
+
+      const pathLength = progressPath.getTotalLength();
+      if (!pathLength) return;
+
+      // Set up the SVG path for progress animation
+      progressPath.style.transition = 'none';
+      progressPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
+      progressPath.style.strokeDashoffset = pathLength.toString();
+      progressPath.getBoundingClientRect();
+      progressPath.style.transition = 'stroke-dashoffset 10ms linear';
+
+      // Update progress on scroll
+      const updateProgress = () => {
+        const scroll = window.pageYOffset || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = pathLength - (scroll * pathLength) / height;
+        progressPath.style.strokeDashoffset = progress.toString();
+      };
+
+      updateProgress();
+
+      // Get progressParent element
+      progressParent = document.querySelector('.progressParent');
+
+      // Show/hide button and update progress on scroll
+      handleScroll = () => {
+        updateProgress();
+        const offset = 50;
+        if (progressParent) {
+          if (window.pageYOffset > offset) {
+            progressParent.classList.add('rn-backto-top-active');
+          } else {
+            progressParent.classList.remove('rn-backto-top-active');
+          }
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
+      // Click handler to scroll to top
+      if (progressParent) {
+        handleClick = (event) => {
+          event.preventDefault();
+          const duration = 550;
+          const start = window.pageYOffset;
+          const startTime = performance.now();
+
+          const animateScroll = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const ease = progress < 0.5 
+              ? 2 * progress * progress 
+              : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+            
+            window.scrollTo(0, start * (1 - ease));
+            
+            if (progress < 1) {
+              requestAnimationFrame(animateScroll);
+            }
+          };
+
+          requestAnimationFrame(animateScroll);
+          return false;
+        };
+
+        progressParent.addEventListener('click', handleClick);
+      }
+    };
+
+    // Wait for DOM to be ready
+    const timer = setTimeout(initBackToTop, 100);
+
+    // Cleanup
+    return () => {
+      clearTimeout(timer);
+      if (handleScroll) {
+        window.removeEventListener('scroll', handleScroll);
+      }
+      if (progressParent && handleClick) {
+        progressParent.removeEventListener('click', handleClick);
       }
     };
   }, []);
@@ -3436,6 +3571,13 @@ function Home() {
         </div>
       </section> */}
       {/*/ End of Package Pricing Plan */}
+
+      {/* Scroll Up */}
+      <div className="progressParent" id="back-top">
+        <svg className="backCircle svg-inner" width="100%" height="100%" viewBox="-1 -1 102 102">
+          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+      </div>
     </>
   );
 }
