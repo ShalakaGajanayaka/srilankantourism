@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 function Header() {
+  const location = useLocation();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [theme, setTheme] = useState(() => {
     // Initialize theme from localStorage or default to 'light'
@@ -157,7 +158,7 @@ function Header() {
                       <div className="d-flex justify-content-between align-items-center">
                         <ul className="listing" id="navigation">
                           <li className="single-list">
-                            <Link to="/" className="single link-active">
+                            <Link to="/" className={`single ${location.pathname === '/' ? 'link-active' : ''}`}>
                               Home
                             </Link>
                             {/* <ul className="submenu">
@@ -173,22 +174,22 @@ function Header() {
                             </ul> */}
                           </li>
                           <li className="single-list">
-                            <Link to="/top-filter-tour-list" className="single">
+                            <Link to="/top-filter-tour-list" className={`single ${location.pathname === '/top-filter-tour-list' ? 'link-active' : ''}`}>
                               Tours
                             </Link>
                           </li>
                           <li className="single-list">
-                            <Link to="/top-filter-hotel-list" className="single">
+                            <Link to="/top-filter-hotel-list" className={`single ${location.pathname === '/top-filter-hotel-list' ? 'link-active' : ''}`}>
                               Hotels
                             </Link>
                           </li>
                           <li className="single-list">
-                            <Link to="/top-filter-transports-list" className="single">
+                            <Link to="/top-filter-transports-list" className={`single ${location.pathname === '/top-filter-transports-list' ? 'link-active' : ''}`}>
                               Transports
                             </Link>
                           </li>
                           <li className="single-list">
-                            <Link to="/top-filter-restaurants-list" className="single">
+                            <Link to="/top-filter-restaurants-list" className={`single ${location.pathname === '/top-filter-restaurants-list' ? 'link-active' : ''}`}>
                               Restaurants
                             </Link>
                           </li>
