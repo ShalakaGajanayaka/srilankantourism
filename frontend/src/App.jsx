@@ -20,6 +20,7 @@ import Register from './pages/Register';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsCondition from './pages/TermsCondition';
 import DetailsWithSlider from './pages/DetailsWithSlider';
+import TopFilterTourList from './pages/TopFilterTourList';
 import './App.css';
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-condition" element={<TermsCondition />} />
           <Route path="/details-with-slider" element={<DetailsWithSlider />} />
+          <Route path="/top-filter-tour-list" element={<TopFilterTourList />} />
         </Routes>
       </Layout>
     </Router>
