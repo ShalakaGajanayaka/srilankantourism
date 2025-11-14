@@ -188,32 +188,9 @@ function Header() {
                             </Link>
                           </li>
                           <li className="single-list">
-                            <a href="javascript:void(0)" className="single">
+                            <Link to="/top-filter-restaurants-list" className="single">
                               Restaurants
-                            </a>
-                            {/* <ul className="submenu">
-                              <li className="single-list">
-                                <Link to="/restaurant-list" className="single">restaurant Category Page</Link>
-                              </li>
-                              <li className="single-list">
-                                <Link to="/top-filter-restaurant-list" className="single">Top Filter Category</Link>
-                              </li>
-                              <li className="single-list">
-                                <Link to="/restaurant-details-with-slider" className="single">Details With slider</Link>
-                              </li>
-                              <li className="single-list">
-                                <Link to="/restaurant-cart-page" className="single">Cart restaurant Page</Link>
-                              </li>
-                              <li className="single-list">
-                                <Link to="/restaurant-booking-payment" className="single">Payment restaurant Page</Link>
-                              </li>
-                              <li className="single-list">
-                                <Link to="/restaurant-booking-complite" className="single">Finish restaurant Booking</Link>
-                              </li>
-                              <li className="single-list">
-                                <Link to="/invoice" className="single">View Invoice</Link>
-                              </li>
-                            </ul> */}
+                            </Link>
                           </li>
                           {/* <li className="single-list">
                             <a href="javascript:void(0)" className="single">

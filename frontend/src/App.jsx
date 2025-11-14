@@ -23,6 +23,7 @@ import DetailsWithSlider from './pages/DetailsWithSlider';
 import TopFilterTourList from './pages/TopFilterTourList';
 import TopFilterHotelList from './pages/TopFilterHotelList';
 import TopFilterTransportsList from './pages/TopFilterTransportsList';
+import TopFilterRestaurantsList from './pages/TopFilterRestaurantsList';
 import './App.css';
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
           <Route path="/top-filter-tour-list" element={<TopFilterTourList />} />
           <Route path="/top-filter-hotel-list" element={<TopFilterHotelList />} />
           <Route path="/top-filter-transports-list" element={<TopFilterTransportsList />} />
+          <Route path="/top-filter-restaurants-list" element={<TopFilterRestaurantsList />} />
         </Routes>
       </Layout>
     </Router>
