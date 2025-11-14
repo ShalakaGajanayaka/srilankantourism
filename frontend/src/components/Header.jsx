@@ -158,7 +158,7 @@ function Header() {
                         <ul className="listing" id="navigation">
                           <li className="single-list">
                             <Link to="/" className="single link-active">
-                              Home 
+                              Home
                             </Link>
                             {/* <ul className="submenu">
                               <li className="single-list">
@@ -173,67 +173,18 @@ function Header() {
                             </ul> */}
                           </li>
                           <li className="single-list">
-                            <a href="javascript:void(0)" className="single">
-                              Tours 
-                            </a>
-                            {/* <ul className="submenu">
-                              <li className="single-list">
-                                <Link to="/tour-list" className="single">Tour Category Page</Link>
-                              </li>
-                              <li className="single-list">
-                                <Link to="/top-filter-tour-list" className="single">Tour Top Filter Category</Link>
-                              </li>
-                              <li className="single-list">
-                                <Link to="/destination" className="single">Tour destination</Link>
-                              </li>
-                              <li className="single-list">
-                                <Link to="/details-with-gallery" className="single">Details With Gallery</Link>
-                              </li>
-                              <li className="single-list">
-                                <Link to="/details-with-slider" className="single">Details With slider</Link>
-                              </li>
-                              <li className="single-list">
-                                <Link to="/tour-cart-page" className="single">Cart Tour Page</Link>
-                              </li>
-                              <li className="single-list">
-                                <Link to="/tour-booking-payment" className="single">Payment Tour Page</Link>
-                              </li>
-                              <li className="single-list">
-                                <Link to="/tour-booking-complite" className="single">Finish Tour Booking</Link>
-                              </li>
-                            </ul> */}
+                            <Link to="/top-filter-tour-list" className="single">
+                              Tours
+                            </Link>
+                          </li>
+                          <li className="single-list">
+                            <Link to="/top-filter-hotel-list" className="single">
+                              Hotels
+                            </Link>
                           </li>
                           <li className="single-list">
                             <a href="javascript:void(0)" className="single">
-                              Hotels 
-                            </a>
-                            {/* <ul className="submenu">
-                              <li className="single-list">
-                                <Link to="/hotel-list" className="single">hotel Category Page</Link>
-                              </li>
-                              <li className="single-list">
-                                <Link to="/top-filter-hotel-list" className="single">hotel Top Filter Category</Link>
-                              </li>
-                              <li className="single-list">
-                                <Link to="/hotel-details-with-slider" className="single">Details With slider</Link>
-                              </li>
-                              <li className="single-list">
-                                <Link to="/hotel-cart-page" className="single">Cart hotel Page</Link>
-                              </li>
-                              <li className="single-list">
-                                <Link to="/hotel-booking-payment" className="single">Payment hotel Page</Link>
-                              </li>
-                              <li className="single-list">
-                                <Link to="/hotel-booking-complite" className="single">Finish hotel Booking</Link>
-                              </li>
-                              <li className="single-list">
-                                <Link to="/invoice" className="single">View Invoice</Link>
-                              </li>
-                            </ul> */}
-                          </li>
-                          <li className="single-list">
-                            <a href="javascript:void(0)" className="single">
-                              Transports 
+                              Transports
                             </a>
                             {/* <ul className="submenu">
                               <li className="single-list">
@@ -261,7 +212,7 @@ function Header() {
                           </li>
                           <li className="single-list">
                             <a href="javascript:void(0)" className="single">
-                              Restaurants 
+                              Restaurants
                             </a>
                             {/* <ul className="submenu">
                               <li className="single-list">

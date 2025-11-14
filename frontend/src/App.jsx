@@ -21,6 +21,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsCondition from './pages/TermsCondition';
 import DetailsWithSlider from './pages/DetailsWithSlider';
 import TopFilterTourList from './pages/TopFilterTourList';
+import TopFilterHotelList from './pages/TopFilterHotelList';
 import './App.css';
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
           <Route path="/terms-condition" element={<TermsCondition />} />
           <Route path="/details-with-slider" element={<DetailsWithSlider />} />
           <Route path="/top-filter-tour-list" element={<TopFilterTourList />} />
+          <Route path="/top-filter-hotel-list" element={<TopFilterHotelList />} />
         </Routes>
       </Layout>
     </Router>
