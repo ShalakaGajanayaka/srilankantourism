@@ -145,6 +145,9 @@ function Footer() {
                     reserved
                   </p>
                   <p className="pera">
+                    <span className="current-year">Ongoing with</span> Shalaka Gajanayake
+                  </p>
+                  <p className="pera">
                     Powered by{' '}
                     <a href="https://bitrate.lk" target="_blank" rel="noopener noreferrer" className="text-decoration-none">
                       @Bitrate.lk
