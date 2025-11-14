@@ -177,22 +177,22 @@ function Header() {
                               Tours <i className="ri-arrow-down-s-line"></i>
                             </a>
                             <ul className="submenu">
-                              <li className="single-list">
+                              {/* <li className="single-list">
                                 <Link to="/tour-list" className="single">Tour Category Page</Link>
-                              </li>
+                              </li> */}
                               <li className="single-list">
                                 <Link to="/top-filter-tour-list" className="single">Tour Top Filter Category</Link>
                               </li>
                               <li className="single-list">
                                 <Link to="/destination" className="single">Tour destination</Link>
                               </li>
-                              <li className="single-list">
+                              {/* <li className="single-list">
                                 <Link to="/details-with-gallery" className="single">Details With Gallery</Link>
-                              </li>
+                              </li> */}
                               <li className="single-list">
                                 <Link to="/details-with-slider" className="single">Details With slider</Link>
                               </li>
-                              <li className="single-list">
+                              {/* <li className="single-list">
                                 <Link to="/tour-cart-page" className="single">Cart Tour Page</Link>
                               </li>
                               <li className="single-list">
@@ -200,7 +200,7 @@ function Header() {
                               </li>
                               <li className="single-list">
                                 <Link to="/tour-booking-complite" className="single">Finish Tour Booking</Link>
-                              </li>
+                              </li> */}
                             </ul>
                           </li>
                           <li className="single-list">
