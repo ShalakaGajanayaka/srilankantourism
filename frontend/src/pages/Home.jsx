@@ -12,6 +12,7 @@ function Home() {
   // State for Explore section tabs
   const [activeExploreTab, setActiveExploreTab] = useState('explore-one');
   const brandSwiperRef = useRef(null);
+  const favSwiperRef = useRef(null);
 
   // Initialize Select2 dropdowns
   useEffect(() => {
@@ -231,6 +232,61 @@ function Home() {
       if (brandSwiperRef.current && brandSwiperRef.current.destroy) {
         brandSwiperRef.current.destroy();
         brandSwiperRef.current = null;
+      }
+    };
+  }, []);
+
+  // Initialize Feature Swiper
+  useEffect(() => {
+    const initFavSwiper = () => {
+      if (typeof window !== 'undefined' && window.Swiper) {
+        const swiperElement = document.querySelector('.favSwiper-active');
+        if (swiperElement && !favSwiperRef.current) {
+          favSwiperRef.current = new window.Swiper('.favSwiper-active', {
+            loop: true,
+            speed: 500,
+            slidesPerView: 1,
+            spaceBetween: 24,
+            autoplay: {
+              delay: 6000,
+              disableOnInteraction: false,
+            },
+            navigation: {
+              nextEl: '.favSwiper-active .swiper-button-next',
+              prevEl: '.favSwiper-active .swiper-button-prev',
+            },
+            breakpoints: {
+              576: {
+                slidesPerView: 2,
+              },
+              992: {
+                slidesPerView: 3,
+              },
+              1200: {
+                slidesPerView: 4,
+              },
+            },
+          });
+        }
+      }
+    };
+
+    // Try to initialize immediately
+    initFavSwiper();
+
+    // If Swiper is not available, wait a bit and try again
+    if (typeof window !== 'undefined' && !window.Swiper) {
+      const timer = setTimeout(() => {
+        initFavSwiper();
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+
+    // Cleanup on unmount
+    return () => {
+      if (favSwiperRef.current && favSwiperRef.current.destroy) {
+        favSwiperRef.current.destroy();
+        favSwiperRef.current = null;
       }
     };
   }, []);
@@ -2003,180 +2059,278 @@ function Home() {
             </div>
           </div>
           <div className="row g-4 position-relative z-10">
-            <div className="col-xl-3 col-lg-4 col-sm-6">
-              <div className="package-card">
-                <div className="package-img imgEffect4">
-                  <Link to="/details-with-slider">
-                    <img src="/assets/images/package/package-4.png" alt="travello" />
-                  </Link>
-                  <div className="image-badge">
-                    <p className="pera">Featured</p>
-                  </div>
-                  <div className="fav-badge">
-                    <i className="ri-heart-fill"></i>
+            <div className="swiper favSwiper-active">
+              <div className="swiper-wrapper">
+                <div className="swiper-slide">
+                  <div className="package-card">
+                    <div className="package-img imgEffect4">
+                      <Link to="/details-with-slider">
+                        <img src="/assets/images/package/package-4.png" alt="travello" />
+                      </Link>
+                      <div className="image-badge">
+                        <p className="pera">Featured</p>
+                      </div>
+                      <div className="fav-badge">
+                        <i className="ri-heart-fill"></i>
+                      </div>
+                    </div>
+                    <div className="package-content">
+                      <div className="location">
+                        <i className="ri-map-pin-line"></i>
+                        <div className="name">Bangkok, Thailand</div>
+                      </div>
+                      <h4 className="area-name">
+                        <Link to="/details-with-slider">Dusitd2 Samyan Bangkok</Link>
+                      </h4>
+                      <div className="packages-person mb-16">
+                        <div className="count">
+                          <i className="ri-time-line"></i>
+                          <p className="pera">3 Days 2 Night</p>
+                        </div>
+                        <div className="count">
+                          <i className="ri-user-line"></i>
+                          <p className="pera">2 Person</p>
+                        </div>
+                      </div>
+                      <div className="price-review mb-0">
+                        <div className="d-flex gap-10">
+                          <p className="light-pera">From</p>
+                          <p className="pera">$95</p>
+                        </div>
+                        <div className="rating">
+                          <i className="ri-star-s-fill"></i>
+                          <p className="pera">4.7 (20 Reviews)</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="package-content">
-                  <div className="location">
-                    <i className="ri-map-pin-line"></i>
-                    <div className="name">Bangkok, Thailand</div>
+                <div className="swiper-slide">
+                  <div className="package-card">
+                    <div className="package-img imgEffect4">
+                      <Link to="/details-with-slider">
+                        <img src="/assets/images/package/package-3.png" alt="travello" />
+                      </Link>
+                      <div className="image-badge">
+                        <p className="pera">Featured</p>
+                      </div>
+                      <div className="fav-badge">
+                        <i className="ri-heart-fill"></i>
+                      </div>
+                    </div>
+                    <div className="package-content">
+                      <div className="location">
+                        <i className="ri-map-pin-line"></i>
+                        <div className="name">Bangkok, Thailand</div>
+                      </div>
+                      <h4 className="area-name">
+                        <Link to="/details-with-slider">Dusitd2 Samyan Bangkok</Link>
+                      </h4>
+                      <div className="packages-person mb-16">
+                        <div className="count">
+                          <i className="ri-time-line"></i>
+                          <p className="pera">3 Days 2 Night</p>
+                        </div>
+                        <div className="count">
+                          <i className="ri-user-line"></i>
+                          <p className="pera">2 Person</p>
+                        </div>
+                      </div>
+                      <div className="price-review mb-0">
+                        <div className="d-flex gap-10">
+                          <p className="light-pera">From</p>
+                          <p className="pera">$95</p>
+                        </div>
+                        <div className="rating">
+                          <i className="ri-star-s-fill"></i>
+                          <p className="pera">4.7 (20 Reviews)</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <h4 className="area-name">
-                    <Link to="/details-with-slider">Dusitd2 Samyan Bangkok</Link>
-                  </h4>
-                  <div className="packages-person mb-16">
-                    <div className="count">
-                      <i className="ri-time-line"></i>
-                      <p className="pera">3 Days 2 Night</p>
+                </div>
+                <div className="swiper-slide">
+                  <div className="package-card">
+                    <div className="package-img imgEffect4">
+                      <Link to="/details-with-slider">
+                        <img src="/assets/images/package/package-2.png" alt="travello" />
+                      </Link>
+                      <div className="image-badge">
+                        <p className="pera">Featured</p>
+                      </div>
+                      <div className="fav-badge">
+                        <i className="ri-heart-fill"></i>
+                      </div>
                     </div>
-                    <div className="count">
-                      <i className="ri-user-line"></i>
-                      <p className="pera">2 Person</p>
+                    <div className="package-content">
+                      <div className="location">
+                        <i className="ri-map-pin-line"></i>
+                        <div className="name">Bangkok, Thailand</div>
+                      </div>
+                      <h4 className="area-name">
+                        <Link to="/details-with-slider">Dusitd2 Samyan Bangkok</Link>
+                      </h4>
+                      <div className="packages-person mb-16">
+                        <div className="count">
+                          <i className="ri-time-line"></i>
+                          <p className="pera">3 Days 2 Night</p>
+                        </div>
+                        <div className="count">
+                          <i className="ri-user-line"></i>
+                          <p className="pera">2 Person</p>
+                        </div>
+                      </div>
+                      <div className="price-review mb-0">
+                        <div className="d-flex gap-10">
+                          <p className="light-pera">From</p>
+                          <p className="pera">$95</p>
+                        </div>
+                        <div className="rating">
+                          <i className="ri-star-s-fill"></i>
+                          <p className="pera">4.7 (20 Reviews)</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className="price-review mb-0">
-                    <div className="d-flex gap-10">
-                      <p className="light-pera">From</p>
-                      <p className="pera">$95</p>
+                </div>
+                <div className="swiper-slide">
+                  <div className="package-card">
+                    <div className="package-img imgEffect4">
+                      <Link to="/details-with-slider">
+                        <img src="/assets/images/package/package-10.jpg" alt="travello" />
+                      </Link>
+                      <div className="image-badge">
+                        <p className="pera">Featured</p>
+                      </div>
+                      <div className="fav-badge">
+                        <i className="ri-heart-fill"></i>
+                      </div>
                     </div>
-                    <div className="rating">
-                      <i className="ri-star-s-fill"></i>
-                      <p className="pera">4.7 (20 Reviews)</p>
+                    <div className="package-content">
+                      <div className="location">
+                        <i className="ri-map-pin-line"></i>
+                        <div className="name">Bangkok, Thailand</div>
+                      </div>
+                      <h4 className="area-name">
+                        <Link to="/details-with-slider">Dusitd2 Samyan Bangkok</Link>
+                      </h4>
+                      <div className="packages-person mb-16">
+                        <div className="count">
+                          <i className="ri-time-line"></i>
+                          <p className="pera">3 Days 2 Night</p>
+                        </div>
+                        <div className="count">
+                          <i className="ri-user-line"></i>
+                          <p className="pera">2 Person</p>
+                        </div>
+                      </div>
+                      <div className="price-review mb-0">
+                        <div className="d-flex gap-10">
+                          <p className="light-pera">From</p>
+                          <p className="pera">$95</p>
+                        </div>
+                        <div className="rating">
+                          <i className="ri-star-s-fill"></i>
+                          <p className="pera">4.7 (20 Reviews)</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="swiper-slide">
+                  <div className="package-card">
+                    <div className="package-img imgEffect4">
+                      <Link to="/details-with-slider">
+                        <img src="/assets/images/package/package-5.jpg" alt="travello" />
+                      </Link>
+                      <div className="image-badge">
+                        <p className="pera">Featured</p>
+                      </div>
+                      <div className="fav-badge">
+                        <i className="ri-heart-fill"></i>
+                      </div>
+                    </div>
+                    <div className="package-content">
+                      <div className="location">
+                        <i className="ri-map-pin-line"></i>
+                        <div className="name">Bangkok, Thailand</div>
+                      </div>
+                      <h4 className="area-name">
+                        <Link to="/details-with-slider">Dusitd2 Samyan Bangkok</Link>
+                      </h4>
+                      <div className="packages-person mb-16">
+                        <div className="count">
+                          <i className="ri-time-line"></i>
+                          <p className="pera">3 Days 2 Night</p>
+                        </div>
+                        <div className="count">
+                          <i className="ri-user-line"></i>
+                          <p className="pera">2 Person</p>
+                        </div>
+                      </div>
+                      <div className="price-review mb-0">
+                        <div className="d-flex gap-10">
+                          <p className="light-pera">From</p>
+                          <p className="pera">$95</p>
+                        </div>
+                        <div className="rating">
+                          <i className="ri-star-s-fill"></i>
+                          <p className="pera">4.7 (20 Reviews)</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="swiper-slide">
+                  <div className="package-card">
+                    <div className="package-img imgEffect4">
+                      <Link to="/details-with-slider">
+                        <img src="/assets/images/package/package-6.jpg" alt="travello" />
+                      </Link>
+                      <div className="image-badge">
+                        <p className="pera">Featured</p>
+                      </div>
+                      <div className="fav-badge">
+                        <i className="ri-heart-fill"></i>
+                      </div>
+                    </div>
+                    <div className="package-content">
+                      <div className="location">
+                        <i className="ri-map-pin-line"></i>
+                        <div className="name">Bangkok, Thailand</div>
+                      </div>
+                      <h4 className="area-name">
+                        <Link to="/details-with-slider">Dusitd2 Samyan Bangkok</Link>
+                      </h4>
+                      <div className="packages-person mb-16">
+                        <div className="count">
+                          <i className="ri-time-line"></i>
+                          <p className="pera">3 Days 2 Night</p>
+                        </div>
+                        <div className="count">
+                          <i className="ri-user-line"></i>
+                          <p className="pera">2 Person</p>
+                        </div>
+                      </div>
+                      <div className="price-review mb-0">
+                        <div className="d-flex gap-10">
+                          <p className="light-pera">From</p>
+                          <p className="pera">$95</p>
+                        </div>
+                        <div className="rating">
+                          <i className="ri-star-s-fill"></i>
+                          <p className="pera">4.7 (20 Reviews)</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
-              <div className="package-card">
-                <div className="package-img imgEffect4">
-                  <Link to="/details-with-slider">
-                    <img src="/assets/images/package/package-3.png" alt="travello" />
-                  </Link>
-                  <div className="image-badge">
-                    <p className="pera">Featured</p>
-                  </div>
-                  <div className="fav-badge">
-                    <i className="ri-heart-fill"></i>
-                  </div>
-                </div>
-                <div className="package-content">
-                  <div className="location">
-                    <i className="ri-map-pin-line"></i>
-                    <div className="name">Bangkok, Thailand</div>
-                  </div>
-                  <h4 className="area-name">
-                    <Link to="/details-with-slider">Dusitd2 Samyan Bangkok</Link>
-                  </h4>
-                  <div className="packages-person mb-16">
-                    <div className="count">
-                      <i className="ri-time-line"></i>
-                      <p className="pera">3 Days 2 Night</p>
-                    </div>
-                    <div className="count">
-                      <i className="ri-user-line"></i>
-                      <p className="pera">2 Person</p>
-                    </div>
-                  </div>
-                  <div className="price-review mb-0">
-                    <div className="d-flex gap-10">
-                      <p className="light-pera">From</p>
-                      <p className="pera">$95</p>
-                    </div>
-                    <div className="rating">
-                      <i className="ri-star-s-fill"></i>
-                      <p className="pera">4.7 (20 Reviews)</p>
-                    </div>
-                  </div>
-                </div>
+              <div className="swiper-button-next">
+                <i className="ri-arrow-right-s-line"></i>
               </div>
-            </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
-              <div className="package-card">
-                <div className="package-img imgEffect4">
-                  <Link to="/details-with-slider">
-                    <img src="/assets/images/package/package-2.png" alt="travello" />
-                  </Link>
-                  <div className="image-badge">
-                    <p className="pera">Featured</p>
-                  </div>
-                  <div className="fav-badge">
-                    <i className="ri-heart-fill"></i>
-                  </div>
-                </div>
-                <div className="package-content">
-                  <div className="location">
-                    <i className="ri-map-pin-line"></i>
-                    <div className="name">Bangkok, Thailand</div>
-                  </div>
-                  <h4 className="area-name">
-                    <Link to="/details-with-slider">Dusitd2 Samyan Bangkok</Link>
-                  </h4>
-                  <div className="packages-person mb-16">
-                    <div className="count">
-                      <i className="ri-time-line"></i>
-                      <p className="pera">3 Days 2 Night</p>
-                    </div>
-                    <div className="count">
-                      <i className="ri-user-line"></i>
-                      <p className="pera">2 Person</p>
-                    </div>
-                  </div>
-                  <div className="price-review mb-0">
-                    <div className="d-flex gap-10">
-                      <p className="light-pera">From</p>
-                      <p className="pera">$95</p>
-                    </div>
-                    <div className="rating">
-                      <i className="ri-star-s-fill"></i>
-                      <p className="pera">4.7 (20 Reviews)</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-3 col-lg-4 col-sm-6">
-              <div className="package-card">
-                <div className="package-img imgEffect4">
-                  <Link to="/details-with-slider">
-                    <img src="/assets/images/package/package-10.jpg" alt="travello" />
-                  </Link>
-                  <div className="image-badge">
-                    <p className="pera">Featured</p>
-                  </div>
-                  <div className="fav-badge">
-                    <i className="ri-heart-fill"></i>
-                  </div>
-                </div>
-                <div className="package-content">
-                  <div className="location">
-                    <i className="ri-map-pin-line"></i>
-                    <div className="name">Bangkok, Thailand</div>
-                  </div>
-                  <h4 className="area-name">
-                    <Link to="/details-with-slider">Dusitd2 Samyan Bangkok</Link>
-                  </h4>
-                  <div className="packages-person mb-16">
-                    <div className="count">
-                      <i className="ri-time-line"></i>
-                      <p className="pera">3 Days 2 Night</p>
-                    </div>
-                    <div className="count">
-                      <i className="ri-user-line"></i>
-                      <p className="pera">2 Person</p>
-                    </div>
-                  </div>
-                  <div className="price-review mb-0">
-                    <div className="d-flex gap-10">
-                      <p className="light-pera">From</p>
-                      <p className="pera">$95</p>
-                    </div>
-                    <div className="rating">
-                      <i className="ri-star-s-fill"></i>
-                      <p className="pera">4.7 (20 Reviews)</p>
-                    </div>
-                  </div>
-                </div>
+              <div className="swiper-button-prev">
+                <i className="ri-arrow-left-s-line"></i>
               </div>
             </div>
           </div>
@@ -3059,7 +3213,7 @@ function Home() {
       {/*/ End of News & Article */}
 
       {/* Package Pricing Plan area */}
-      <section className="pricing-area bottom-padding section-bg-before-two">
+      {/* <section className="pricing-area bottom-padding section-bg-before-two">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-xl-7 col-lg-7">
@@ -3280,7 +3434,7 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/*/ End of Package Pricing Plan */}
     </>
   );
