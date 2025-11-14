@@ -22,6 +22,7 @@ import TermsCondition from './pages/TermsCondition';
 import DetailsWithSlider from './pages/DetailsWithSlider';
 import TopFilterTourList from './pages/TopFilterTourList';
 import TopFilterHotelList from './pages/TopFilterHotelList';
+import TopFilterTransportsList from './pages/TopFilterTransportsList';
 import './App.css';
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
           <Route path="/details-with-slider" element={<DetailsWithSlider />} />
           <Route path="/top-filter-tour-list" element={<TopFilterTourList />} />
           <Route path="/top-filter-hotel-list" element={<TopFilterHotelList />} />
+          <Route path="/top-filter-transports-list" element={<TopFilterTransportsList />} />
         </Routes>
       </Layout>
     </Router>
