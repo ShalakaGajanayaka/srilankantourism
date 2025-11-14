@@ -12,6 +12,9 @@ import News from './pages/News';
 import Faq from './pages/Faq';
 import Dashboard from './pages/Dashboard';
 import TourCart from './pages/TourCart';
+import TourBookingDetails from './pages/TourBookingDetails';
+import TourBookingPayment from './pages/TourBookingPayment';
+import TourBookingComplete from './pages/TourBookingComplete';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import PrivacyPolicy from './pages/PrivacyPolicy';
@@ -36,6 +39,9 @@ function App() {
           <Route path="/faq" element={<Faq />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/tour-cart" element={<TourCart />} />
+          <Route path="/tour-booking-details" element={<TourBookingDetails />} />
+          <Route path="/tour-booking-payment" element={<TourBookingPayment />} />
+          <Route path="/tour-booking-complete" element={<TourBookingComplete />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
