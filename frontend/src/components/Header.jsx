@@ -174,22 +174,22 @@ function Header() {
                             </ul> */}
                           </li>
                           <li className="single-list">
-                            <Link to="/top-filter-tour-list" className={`single ${location.pathname === '/top-filter-tour-list' ? 'link-active' : ''}`}>
+                            <Link to="/tours" className={`single ${location.pathname === '/tours' ? 'link-active' : ''}`}>
                               Tours
                             </Link>
                           </li>
                           <li className="single-list">
-                            <Link to="/top-filter-hotel-list" className={`single ${location.pathname === '/top-filter-hotel-list' ? 'link-active' : ''}`}>
+                            <Link to="/hotels" className={`single ${location.pathname === '/hotels' ? 'link-active' : ''}`}>
                               Hotels
                             </Link>
                           </li>
                           <li className="single-list">
-                            <Link to="/top-filter-transports-list" className={`single ${location.pathname === '/top-filter-transports-list' ? 'link-active' : ''}`}>
+                            <Link to="/transports" className={`single ${location.pathname === '/transports' ? 'link-active' : ''}`}>
                               Transports
                             </Link>
                           </li>
                           <li className="single-list">
-                            <Link to="/top-filter-restaurants-list" className={`single ${location.pathname === '/top-filter-restaurants-list' ? 'link-active' : ''}`}>
+                            <Link to="/restaurants" className={`single ${location.pathname === '/restaurants' ? 'link-active' : ''}`}>
                               Restaurants
                             </Link>
                           </li>

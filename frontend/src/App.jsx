@@ -34,11 +34,11 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/tour-list" element={<TourList />} />
-          <Route path="/hotel-list" element={<HotelList />} />
+          <Route path="/tours" element={<TopFilterTourList />} />
+          <Route path="/hotels" element={<TopFilterHotelList />} />
+          <Route path="/transports" element={<TopFilterTransportsList />} />
+          <Route path="/restaurants" element={<TopFilterRestaurantsList />} />
           <Route path="/destination" element={<Destination />} />
-          <Route path="/transports-list" element={<TransportsList />} />
-          <Route path="/restaurant-list" element={<RestaurantList />} />
           <Route path="/news" element={<News />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/dashboard" element={<Dashboard />} />
@@ -51,10 +51,10 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-condition" element={<TermsCondition />} />
           <Route path="/details-with-slider" element={<DetailsWithSlider />} />
-          <Route path="/top-filter-tour-list" element={<TopFilterTourList />} />
+          {/* <Route path="/top-filter-tour-list" element={<TopFilterTourList />} />
           <Route path="/top-filter-hotel-list" element={<TopFilterHotelList />} />
           <Route path="/top-filter-transports-list" element={<TopFilterTransportsList />} />
-          <Route path="/top-filter-restaurants-list" element={<TopFilterRestaurantsList />} />
+          <Route path="/top-filter-restaurants-list" element={<TopFilterRestaurantsList />} /> */}
         </Routes>
       </Layout>
     </Router>
