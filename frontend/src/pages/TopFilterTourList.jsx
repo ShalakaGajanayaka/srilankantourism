@@ -217,17 +217,31 @@ function TopFilterTourList() {
   return (
     <>
       {/* Breadcrumbs */}
-      <section className="breadcrumbs-area pb-90 breadcrumb-bg">
-        <div className="container">
-          <h1 className="title wow fadeInUp" data-wow-delay="0.0s">Tour - Top Filter</h1>
+      <section 
+        className="breadcrumbs-area pb-90" 
+        style={{
+          backgroundImage: 'url(/assets/images/popularPackages/bannerTour.png)',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          position: 'relative'
+        }}
+      >
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <h1 className="title wow fadeInUp" data-wow-delay="0.0s" style={{ color: '#ffffff' }}>Tours</h1>
           <div className="breadcrumb-text">
+            <style>{`
+              .breadcrumb-text .breadcrumb .single-list:last-child::before {
+                color: #ffffff !important;
+              }
+            `}</style>
             <nav aria-label="breadcrumb" className="breadcrumb-nav wow fadeInUp" data-wow-delay="0.1s">
               <ul className="breadcrumb listing">
                 <li className="breadcrumb-item single-list">
-                  <Link to="/" className="single">Home</Link>
+                  <Link to="/" className="single" style={{ color: '#ffffff' }}>Home</Link>
                 </li>
                 <li className="breadcrumb-item single-list" aria-current="page">
-                  <a href="javascript:void(0)" className="single active">Tour List</a>
+                  <a href="javascript:void(0)" className="single active" >Tour List</a>
                 </li>
               </ul>
             </nav>

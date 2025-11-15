@@ -214,17 +214,31 @@ function TopFilterHotelList() {
   return (
     <>
       {/* Breadcrumbs */}
-      <section className="breadcrumbs-area pb-90 breadcrumb-bg">
-        <div className="container">
-          <h1 className="title wow fadeInUp" data-wow-delay="0.0s">Hotel - Top Filter</h1>
+      <section 
+        className="breadcrumbs-area pb-90" 
+        style={{
+          backgroundImage: 'url(/assets/images/popularPackages/bannerHotel.png)',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          position: 'relative'
+        }}
+      >
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <h1 className="title wow fadeInUp" data-wow-delay="0.0s" style={{ color: '#ffffff' }}>Hotels</h1>
           <div className="breadcrumb-text">
+            <style>{`
+              .breadcrumb-text .breadcrumb .single-list:last-child::before {
+                color: #ffffff !important;
+              }
+            `}</style>
             <nav aria-label="breadcrumb" className="breadcrumb-nav wow fadeInUp" data-wow-delay="0.1s">
               <ul className="breadcrumb listing">
                 <li className="breadcrumb-item single-list">
-                  <Link to="/" className="single">Home</Link>
+                  <Link to="/" className="single" style={{ color: '#ffffff' }}>Home</Link>
                 </li>
                 <li className="breadcrumb-item single-list" aria-current="page">
-                  <a href="javascript:void(0)" className="single active">Hotel List</a>
+                  <a href="javascript:void(0)" className="single active" >Hotel List</a>
                 </li>
               </ul>
             </nav>
