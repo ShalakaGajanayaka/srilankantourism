@@ -2063,7 +2063,7 @@ function Home() {
             <div className="col-xl-7 col-lg-6">
               <div className="about-count-section about-count-before-bg">
                 <div className="banner">
-                  <img src="/assets/images/gallery/about-banner-three.png" alt="travello" />
+                  <img src="/assets/images/popularPackages/aboutUs.png" alt="travello" />
                 </div>
                 <div className="all-count-list">
                   <div className="details">
