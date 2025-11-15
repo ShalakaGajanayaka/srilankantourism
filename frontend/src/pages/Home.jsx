@@ -1750,7 +1750,7 @@ function Home() {
           <div className="row g-4">
             <div className="col-lg-6 col-md-6">
               <Link to="/tour-list" className="offer-banner imgEffect4 wow fadeInLeft" data-wow-delay="0.0s">
-                <img src="/assets/images/gallery/offercard-1.jpg" alt="travello" />
+                <img src="/assets/images/popularPackages/offerBannerColombo.png" alt="travello" />
                 <div className="offer-content">
                   <p className="highlights-text">Save up to</p>
                   <h4 className="title">50%</h4>
@@ -1765,7 +1765,7 @@ function Home() {
             </div>
             <div className="col-lg-6 col-md-6">
               <Link to="/hotel-list" className="offer-banner imgEffect4 wow fadeInRight" data-wow-delay="0.0s">
-                <img src="/assets/images/gallery/offercard-2.jpg" alt="travello" />
+                <img src="/assets/images/popularPackages/offerBannerKandy.png" alt="travello" />
                 <div className="offer-content-two">
                   <h4 className="title">Nearby Hotels</h4>
                   <p className="pera">
