@@ -877,7 +877,7 @@ function Home() {
                       <div className="package-card h-calc">
                         <div className="package-img imgEffect4">
                           <Link to="/details-with-slider">
-                            <img src="/assets/images/package/package-4.png" alt="travello" />
+                            <img src="/assets/images/popularPackages/package1.png" alt="travello" />
                           </Link>
                           <div className="image-badge">
                             <p className="pera">Featured</p>
@@ -918,7 +918,7 @@ function Home() {
                       <div className="package-card h-calc">
                         <div className="package-img imgEffect4">
                           <Link to="/details-with-slider">
-                            <img src="/assets/images/package/package-3.png" alt="travello" />
+                            <img src="/assets/images/popularPackages/package2.png" alt="travello" />
                           </Link>
                           <div className="image-badge">
                             <p className="pera">Featured</p>
@@ -959,7 +959,7 @@ function Home() {
                       <div className="package-card h-calc">
                         <div className="package-img imgEffect4">
                           <Link to="/details-with-slider">
-                            <img src="/assets/images/package/package-2.png" alt="travello" />
+                            <img src="/assets/images/popularPackages/package3.png" alt="travello" />
                           </Link>
                           <div className="image-badge">
                             <p className="pera">Featured</p>
@@ -1000,7 +1000,7 @@ function Home() {
                       <div className="package-card h-calc">
                         <div className="package-img imgEffect4">
                           <Link to="/details-with-slider">
-                            <img src="/assets/images/package/package-10.jpg" alt="travello" />
+                            <img src="/assets/images/popularPackages/package4.png" alt="travello" />
                           </Link>
                           <div className="image-badge">
                             <p className="pera">Featured</p>
@@ -1046,7 +1046,7 @@ function Home() {
                       <div className="package-card h-calc">
                         <div className="package-img imgEffect4">
                           <Link to="/details-with-slider">
-                            <img src="/assets/images/package/package-5.jpg" alt="travello" />
+                            <img src="/assets/images/popularPackages/kandy1.png" alt="travello" />
                           </Link>
                           <div className="image-badge">
                             <p className="pera">Featured</p>
@@ -1087,7 +1087,7 @@ function Home() {
                       <div className="package-card h-calc">
                         <div className="package-img imgEffect4">
                           <Link to="/details-with-slider">
-                            <img src="/assets/images/package/package-6.jpg" alt="travello" />
+                            <img src="/assets/images/popularPackages/kandy2.png" alt="travello" />
                           </Link>
                           <div className="image-badge">
                             <p className="pera">Featured</p>
@@ -1128,7 +1128,7 @@ function Home() {
                       <div className="package-card h-calc">
                         <div className="package-img imgEffect4">
                           <Link to="/details-with-slider">
-                            <img src="/assets/images/package/package-7.jpg" alt="travello" />
+                            <img src="/assets/images/popularPackages/kandy3.png" alt="travello" />
                           </Link>
                           <div className="image-badge">
                             <p className="pera">Featured</p>
@@ -1169,7 +1169,7 @@ function Home() {
                       <div className="package-card h-calc">
                         <div className="package-img imgEffect4">
                           <Link to="/details-with-slider">
-                            <img src="/assets/images/package/package-8.jpg" alt="travello" />
+                            <img src="/assets/images/popularPackages/kandy4.png" alt="travello" />
                           </Link>
                           <div className="image-badge">
                             <p className="pera">Featured</p>
@@ -1215,7 +1215,7 @@ function Home() {
                       <div className="package-card h-calc">
                         <div className="package-img imgEffect4">
                           <Link to="/details-with-slider">
-                            <img src="/assets/images/package/package-9.jpg" alt="travello" />
+                            <img src="/assets/images/popularPackages/kandy4.png" alt="travello" />
                           </Link>
                           <div className="image-badge">
                             <p className="pera">Featured</p>
