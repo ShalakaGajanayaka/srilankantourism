@@ -20,8 +20,23 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Routes
+// Root route
+app.get('/', (req, res) => {
+  res.json({
+    message: 'Welcome to Sri Lanka Tourism API',
+    version: '1.0.0',
+    status: 'Running',
+    endpoints: {
+      health: '/api/health',
+      auth: '/api/auth',
+      tours: '/api/tours'
+    },
+    documentation: 'API documentation coming soon...',
+    timestamp: new Date().toISOString()
+  });
+});
 
+// Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/tours', tourRoutes);
 // TODO: Add more routes
@@ -44,10 +59,31 @@ const connectDB = async () => {
     const conn = await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/srilanka-tourism', {
       // Remove deprecated options for newer mongoose versions
     });
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
+    console.log('\n✅ ============================================');
+    console.log('✅ MongoDB Connected Successfully!');
+    console.log(`✅ Host: ${conn.connection.host}`);
+    console.log(`✅ Database: ${conn.connection.name}`);
+    console.log(`✅ Ready State: ${conn.connection.readyState === 1 ? 'Connected' : 'Disconnected'}`);
+    console.log('✅ ============================================\n');
   } catch (error) {
-    console.error('Error connecting to MongoDB:', error.message);
-    process.exit(1);
+    console.error('\n❌ ============================================');
+    console.error('❌ MongoDB Connection Failed!');
+    console.error(`❌ Error: ${error.message}`);
+    console.error('❌ ============================================');
+    console.error('⚠️  Server will continue running, but database features will not work.');
+    console.error('💡 Make sure your IP is whitelisted in MongoDB Atlas:');
+    console.error('   https://www.mongodb.com/docs/atlas/security-whitelist/\n');
+    
+    // In development, don't exit - allow server to run and retry connection
+    if (process.env.NODE_ENV === 'production') {
+      process.exit(1);
+    } else {
+      // Retry connection after 5 seconds in development
+      console.log('🔄 Retrying MongoDB connection in 5 seconds...\n');
+      setTimeout(() => {
+        connectDB();
+      }, 5000);
+    }
   }
 };
 
@@ -71,7 +107,11 @@ app.use((req, res) => {
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-  console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log('\n🚀 ============================================');
+  console.log('🚀 Server Started Successfully!');
+  console.log(`🚀 Port: ${PORT}`);
+  console.log(`🚀 Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`🚀 URL: http://localhost:${PORT}`);
+  console.log('🚀 ============================================\n');
 });
 
